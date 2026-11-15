@@ -89,25 +89,41 @@ $('items').onsubmit=async e=>{
    const med=meds.find(m=>m.id===medForm.dataset.medicine);if(!med)return;
    const btn=medForm.querySelector('button[type=submit]');
    const feedback=medForm.querySelector('.save-feedback');
+   if(!btn||!feedback)return;
    btn.disabled=true;btn.textContent='Salvataggio...';
-   feedback.hidden=true;
+   feedback.hidden=false;feedback.className='save-feedback';feedback.textContent='Salvataggio in corso, attendi...';
+   const controller=new AbortController();
+   const timer=setTimeout(()=>controller.abort(),12000);
    try{
      const fields={};
-     for(const key of ['active_ingredient','strength','dosage_form','storage_location'])fields[key]=medForm.elements[key].value.trim()||null;const threshold=medForm.elements.minimum_stock.value.trim();if(threshold!==''&&(!Number.isInteger(Number(threshold))||Number(threshold)<0))throw Error('La scorta minima deve essere un numero intero non negativo.');fields.minimum_stock=threshold===''?null:Number(threshold);
-     const response=await db.from('medicines').update(fields).eq('id',med.id).eq('household_id',home).select('id');
+     for(const key of ['active_ingredient','strength','dosage_form','storage_location'])
+       fields[key]=medForm.elements.namedItem(key).value.trim()||null;
+     const threshold=medForm.elements.namedItem('minimum_stock').value.trim();
+     if(threshold!==''&&(!Number.isInteger(Number(threshold))||Number(threshold)<0))
+       throw Error('La scorta minima deve essere un numero intero non negativo.');
+     fields.minimum_stock=threshold===''?null:Number(threshold);
+     const response=await db.from('medicines').update(fields)
+       .eq('id',med.id).eq('household_id',home)
+       .select('id,active_ingredient,strength,dosage_form,storage_location,minimum_stock')
+       .single().abortSignal(controller.signal);
      if(response.error)throw response.error;
-     if(!response.data?.length)throw Error('Modifica non autorizzata o medicinale non trovato.');
+     if(!response.data?.id)throw Error('Salvataggio non confermato dal database.');
+     Object.assign(med,response.data);
      openMedicine=med.id;
-     medicineFeedback={id:med.id,type:'success',text:'✓ Modifiche salvate correttamente. La scheda è aggiornata e condivisa.'};
-     await load();
+     medicineFeedback={id:med.id,type:'success',text:'✓ Dettagli e scorta minima salvati.'};
      say('');
+     render();
    }catch(err){
-     medicineFeedback={id:med.id,type:'error',text:'Salvataggio non riuscito: '+err.message};
+     const timedOut=controller.signal.aborted;
+     const message=timedOut?'La richiesta ha impiegato troppo tempo. Il salvataggio non è confermato: premi Aggiorna prima di riprovare.':'Salvataggio non riuscito: '+(err?.message||'errore sconosciuto');
+     medicineFeedback={id:med.id,type:'error',text:message};
      feedback.className='save-feedback error';
-     feedback.textContent=medicineFeedback.text;
+     feedback.textContent=message;
      feedback.hidden=false;
    }finally{
-     btn.disabled=false;btn.textContent='Salva dettagli e scorta minima';
+     clearTimeout(timer);
+     btn.disabled=false;
+     btn.textContent='Salva dettagli e scorta minima';
    }
    return;
  }
