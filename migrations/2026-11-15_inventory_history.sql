@@ -8,6 +8,7 @@ create table if not exists public.inventory_events (
   event_type text not null,
   details jsonb not null default '{}'::jsonb,
   actor_id uuid,
+  actor_email text,
   created_at timestamptz not null default now()
 );
 create index if not exists inventory_events_household_recent
@@ -45,11 +46,11 @@ begin
       'units_per_pack',new.units_per_pack,'remaining_units',new.remaining_units);
   end if;
   insert into public.inventory_events
-    (household_id,medicine_id,medicine_name,event_type,details,actor_id)
+    (household_id,medicine_id,medicine_name,event_type,details,actor_id,actor_email)
   values(v_med.household_id,v_med.id,v_med.name,
     case tg_op when 'INSERT' then 'lot_added' when 'DELETE' then 'lot_deleted'
     else 'lot_updated' end,
-    jsonb_build_object('before',v_old,'after',v_new),auth.uid());
+    jsonb_build_object('before',v_old,'after',v_new),auth.uid(),auth.jwt()->>'email');
   return coalesce(new,old);
 end; $$;
 
@@ -68,14 +69,14 @@ begin
     (new.name,new.active_ingredient,new.strength,new.dosage_form,
      new.storage_location,new.minimum_stock) then return new; end if;
   insert into public.inventory_events
-    (household_id,medicine_id,medicine_name,event_type,details,actor_id)
+    (household_id,medicine_id,medicine_name,event_type,details,actor_id,actor_email)
   values(new.household_id,new.id,new.name,
     case when tg_op='INSERT' then 'medicine_added' else 'medicine_updated' end,
     jsonb_build_object('before',case when tg_op='UPDATE' then
       jsonb_build_object('minimum_stock',old.minimum_stock,'name',old.name)
       else null end,'after',
       jsonb_build_object('minimum_stock',new.minimum_stock,'name',new.name)),
-    auth.uid());
+    auth.uid(),auth.jwt()->>'email');
   return new;
 end; $$;
 drop trigger if exists medcasa_medicine_audit on public.medicines;
