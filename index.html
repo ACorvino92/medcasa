@@ -47,7 +47,7 @@ function render(){
    }).join('');
    const summary=own.filter(l=>l.quantity>0).map(l=>l.expiry_month).sort()[0];
    const subtitle=[m.strength,m.dosage_form].filter(Boolean).map(esc).join(' · ');
-   const detailsForm='<form class="med-fields" data-medicine="'+esc(m.id)+'"><h3>Dettagli del medicinale</h3><p class="muted">Tutti i campi seguenti sono facoltativi.</p><label>Principio attivo<input name="active_ingredient" value="'+esc(m.active_ingredient||'')+'" placeholder="Es. Paracetamolo"></label><label>Dosaggio<input name="strength" value="'+esc(m.strength||'')+'" placeholder="Es. 500 mg"></label><label>Forma farmaceutica<input name="dosage_form" value="'+esc(m.dosage_form||'')+'" placeholder="Es. Compresse"></label><label>Posizione in casa<input name="storage_location" value="'+esc(m.storage_location||'')+'" placeholder="Es. Armadietto bagno"></label><label>Scorta minima (confezioni)<input name="minimum_stock" type="number" min="0" step="1" value="'+(m.minimum_stock??'')+'" placeholder="Es. 2"></label><p class="stock-help">Facoltativo. Lascia vuoto per disattivare gli avvisi; con 0 ricevi un avviso solo quando il medicinale è esaurito. Le confezioni scadute non contano.</p><button type="submit">Salva dettagli e scorta minima</button></form>';
+   const detailsForm='<form class="med-fields" data-medicine="'+esc(m.id)+'"><h3>Dettagli del medicinale</h3><p class="muted">Tutti i campi seguenti sono facoltativi.</p><label>Principio attivo<input name="active_ingredient" value="'+esc(m.active_ingredient||'')+'" placeholder="Es. Paracetamolo"></label><label>Dosaggio<input name="strength" value="'+esc(m.strength||'')+'" placeholder="Es. 500 mg"></label><label>Forma farmaceutica<input name="dosage_form" value="'+esc(m.dosage_form||'')+'" placeholder="Es. Compresse"></label><label>Posizione in casa<input name="storage_location" value="'+esc(m.storage_location||'')+'" placeholder="Es. Armadietto bagno"></label><label>Scorta minima (confezioni)<input name="minimum_stock" type="number" min="0" step="1" value="'+(m.minimum_stock??'')+'" placeholder="Es. 2"></label><p class="stock-help">Facoltativo. Lascia vuoto per disattivare gli avvisi; con 0 ricevi un avviso solo quando il medicinale è esaurito. Le confezioni scadute non contano.</p><button type="submit">Salva dettagli e scorta minima</button><div class="save-feedback '+(medicineFeedback?.id===m.id?medicineFeedback.type:'')+'" role="status" '+(medicineFeedback?.id===m.id?'':'hidden')+'>'+(medicineFeedback?.id===m.id?esc(medicineFeedback.text):'')+'</div></form>';
    el.innerHTML='<summary><div class="row"><strong>'+esc(m.name)+'</strong><span>'+own.reduce((sum,l)=>sum+l.quantity,0)+' confezioni</span></div>'+(subtitle?'<span class="med-subtitle">'+subtitle+'</span>':'')+'<span class="med-subtitle">Scadenza più vicina: '+(summary?esc(summary.slice(5,7)+'/'+summary.slice(0,4)):'nessuna confezione disponibile')+'</span>'+stockBadge+'</summary><div class="medicine-body">'+detailsForm+'<h3>Confezioni e scadenze</h3>'+rows+'<button type="button" class="secondary add-lot-button" data-add-lot="'+esc(m.id)+'">＋ Aggiungi confezioni</button></div>';
    $('items').append(el);
  }
@@ -107,7 +107,7 @@ $('items').onsubmit=async e=>{
      feedback.textContent=medicineFeedback.text;
      feedback.hidden=false;
    }finally{
-     btn.disabled=false;btn.textContent='Salva dettagli';
+     btn.disabled=false;btn.textContent='Salva dettagli e scorta minima';
    }
    return;
  }
