@@ -30,7 +30,7 @@ set search_path = public, pg_temp as $$
 declare v_med record; v_old jsonb; v_new jsonb;
 begin
   select id, household_id, name into v_med from public.medicines
-  where id = coalesce(new.medicine_id,old.medicine_id);
+  where id = case when tg_op='DELETE' then old.medicine_id else new.medicine_id end;
   if not found then return coalesce(new,old); end if;
   if tg_op = 'UPDATE' and
      (old.quantity,old.expiry_month,old.units_per_pack,old.remaining_units)
@@ -83,3 +83,17 @@ drop trigger if exists medcasa_medicine_audit on public.medicines;
 create trigger medcasa_medicine_audit
 after insert or update on public.medicines
 for each row execute function public.medcasa_audit_medicine();
+
+-- Autorizza l'eliminazione di un lotto solo ai membri della famiglia proprietaria.
+drop policy if exists "Members can delete family lots" on public.lots;
+create policy "Members can delete family lots" on public.lots
+for delete to authenticated using (
+  exists (
+    select 1 from public.medicines med
+    join public.memberships mem on mem.household_id = med.household_id
+    where med.id = lots.medicine_id and mem.user_id = (select auth.uid())
+  )
+);
+grant delete on public.lots to authenticated;
+revoke all on function public.medcasa_audit_lot() from public, anon, authenticated;
+revoke all on function public.medcasa_audit_medicine() from public, anon, authenticated;
