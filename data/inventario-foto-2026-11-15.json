@@ -1,0 +1,501 @@
+{
+  "source": "Inventario manoscritto, due fotografie fornite dall'utente il 15/11/2026",
+  "approved": [
+    {
+      "name": "Tonimer Lab 800",
+      "expiry": "2027-10",
+      "quantity": 1
+    },
+    {
+      "name": "Tonimer Baby 800",
+      "expiry": "2028-03",
+      "quantity": 2
+    },
+    {
+      "name": "Hipp Immuno Gocce",
+      "expiry": "2027-11",
+      "quantity": 3
+    },
+    {
+      "name": "Nosiac Gocce",
+      "expiry": "2028-10",
+      "quantity": 1
+    },
+    {
+      "name": "Decaflu Febbre e Dolore",
+      "expiry": "2027-02",
+      "quantity": 2
+    },
+    {
+      "name": "Immunoped Baby Gocce",
+      "expiry": "2027-10",
+      "quantity": 2
+    },
+    {
+      "name": "Reuterin GG",
+      "expiry": "2027-09",
+      "quantity": 1
+    },
+    {
+      "name": "Tachipirina FlashTab 250 mg",
+      "expiry": "2027-04",
+      "quantity": 4
+    },
+    {
+      "name": "Tachipirina Supposte 125 mg",
+      "expiry": "2031-01",
+      "quantity": 1
+    },
+    {
+      "name": "Tachipirina Sciroppo 120 mg/5 ml",
+      "expiry": "2027-08",
+      "quantity": 1
+    },
+    {
+      "name": "Cefixoral 100 mg/5 ml",
+      "expiry": "2027-03",
+      "quantity": 2
+    },
+    {
+      "name": "Cefixoral 100 mg/5 ml",
+      "expiry": "2027-04",
+      "quantity": 1
+    },
+    {
+      "name": "Aluneb Spray Grande",
+      "expiry": "2029-02",
+      "quantity": 1
+    },
+    {
+      "name": "Aluneb Spray Piccolo",
+      "expiry": "2028-05",
+      "quantity": 2
+    },
+    {
+      "name": "Nosiac Capsule",
+      "expiry": "2028-09",
+      "quantity": 1
+    },
+    {
+      "name": "Dicoflor Gocce",
+      "expiry": "2028-10",
+      "quantity": 1
+    },
+    {
+      "name": "Prodigo Baby",
+      "expiry": "2027-01",
+      "quantity": 2
+    },
+    {
+      "name": "Xflor Gocce",
+      "expiry": "2027-09",
+      "quantity": 4
+    },
+    {
+      "name": "Cliazen",
+      "expiry": "2027-11",
+      "quantity": 1
+    },
+    {
+      "name": "Cliazen",
+      "expiry": "2028-03",
+      "quantity": 1
+    },
+    {
+      "name": "Clavulin 400",
+      "expiry": "2027-03",
+      "quantity": 1
+    },
+    {
+      "name": "Hipp Flora",
+      "expiry": "2027-09",
+      "quantity": 1
+    },
+    {
+      "name": "Becon D Gocce",
+      "expiry": "2029-03",
+      "quantity": 2
+    },
+    {
+      "name": "Bimbovit DK 150",
+      "expiry": "2028-06",
+      "quantity": 2
+    },
+    {
+      "name": "Generit",
+      "expiry": "2027-06",
+      "quantity": 1
+    },
+    {
+      "name": "Bicovit D Gocce",
+      "expiry": "2027-02",
+      "quantity": 1
+    },
+    {
+      "name": "Bimbovit Gocce",
+      "expiry": "2028-02",
+      "quantity": 1
+    },
+    {
+      "name": "Energia Oro",
+      "expiry": "2027-03",
+      "quantity": 2
+    },
+    {
+      "name": "Emofix",
+      "expiry": "2027-08",
+      "quantity": 1
+    },
+    {
+      "name": "Bacorinol Spray",
+      "expiry": "2027-07",
+      "quantity": 1
+    },
+    {
+      "name": "Formistin",
+      "expiry": "2027-09",
+      "quantity": 1
+    },
+    {
+      "name": "Prebiolac Gocce",
+      "expiry": "2028-09",
+      "quantity": 1
+    },
+    {
+      "name": "Lactobif GG",
+      "expiry": "2028-08",
+      "quantity": 1
+    },
+    {
+      "name": "Enozoftal",
+      "expiry": "2027-02",
+      "quantity": 2
+    },
+    {
+      "name": "Rinopanteina",
+      "expiry": "2027-07",
+      "quantity": 1
+    },
+    {
+      "name": "Sofargen Derma",
+      "expiry": "2028-03",
+      "quantity": 2
+    },
+    {
+      "name": "Herpaso Vir Baby",
+      "expiry": "2028-10",
+      "quantity": 1
+    },
+    {
+      "name": "Hipp Cambio",
+      "expiry": "2028-01",
+      "quantity": 1
+    },
+    {
+      "name": "Vea Bua",
+      "expiry": "2029-05",
+      "quantity": 1
+    },
+    {
+      "name": "Vea Spray",
+      "expiry": "2029-02",
+      "quantity": 2
+    },
+    {
+      "name": "Vea Plant",
+      "expiry": "2027-07",
+      "quantity": 1
+    },
+    {
+      "name": "Vea Plant",
+      "expiry": "2028-03",
+      "quantity": 1
+    },
+    {
+      "name": "Clia Bebè Gel",
+      "expiry": "2027-12",
+      "quantity": 2
+    },
+    {
+      "name": "Joy Gocce",
+      "expiry": "2027-02",
+      "quantity": 2
+    },
+    {
+      "name": "Melilax Pediatric",
+      "expiry": "2027-05",
+      "quantity": 7
+    },
+    {
+      "name": "Melilax Adulti",
+      "expiry": "2027-02",
+      "quantity": 9
+    },
+    {
+      "name": "Hipp D3",
+      "expiry": "2027-10",
+      "quantity": 4
+    },
+    {
+      "name": "Hipp D3",
+      "expiry": "2027-12",
+      "quantity": 2
+    },
+    {
+      "name": "Hipp D3",
+      "expiry": "2028-02",
+      "quantity": 4
+    },
+    {
+      "name": "Tobral",
+      "expiry": "2028-08",
+      "quantity": 1
+    },
+    {
+      "name": "Cefixoral 400 Compresse",
+      "expiry": "2027-02",
+      "quantity": 1
+    },
+    {
+      "name": "Cefixoral 400 Compresse",
+      "expiry": "2027-06",
+      "quantity": 1
+    },
+    {
+      "name": "Peridon",
+      "expiry": "2027-07",
+      "quantity": 1
+    },
+    {
+      "name": "Novalgina",
+      "expiry": "2027-05",
+      "quantity": 1
+    },
+    {
+      "name": "Paromicina",
+      "expiry": "2027-04",
+      "quantity": 2
+    },
+    {
+      "name": "Tachipirina 1000 mg",
+      "expiry": "2029-11",
+      "quantity": 2
+    },
+    {
+      "name": "Gentalyn Beta",
+      "expiry": "2027-04",
+      "quantity": 1
+    },
+    {
+      "name": "Vea Oris",
+      "expiry": "2029-02",
+      "quantity": 1
+    },
+    {
+      "name": "Polase",
+      "expiry": "2028-03",
+      "quantity": 4
+    },
+    {
+      "name": "Plustil Forte",
+      "expiry": "2028-05",
+      "quantity": 3
+    },
+    {
+      "name": "Aboca Neobianacid",
+      "expiry": "2028-11",
+      "quantity": 1
+    },
+    {
+      "name": "Fermenti Lattici",
+      "expiry": "2027-02",
+      "quantity": 1
+    },
+    {
+      "name": "Voltfast 50 mg",
+      "expiry": "2028-01",
+      "quantity": 1
+    },
+    {
+      "name": "Bealpha Medicazione Adesiva Grande",
+      "expiry": "2027-08",
+      "quantity": 4
+    }
+  ],
+  "review": [
+    {
+      "name": "Quixx Baby Spray Nasale",
+      "expiry": "2028-08",
+      "quantity": 1
+    },
+    {
+      "name": "Quixx Baby Spray Nasale",
+      "expiry": "2028-11",
+      "quantity": 1
+    },
+    {
+      "name": "Quixx Baby Spray Nasale",
+      "expiry": "2029-06",
+      "quantity": 1
+    },
+    {
+      "name": "Bif 100 Gocce",
+      "expiry": "2027-07",
+      "quantity": 1
+    },
+    {
+      "name": "Bif 100 Gocce",
+      "expiry": "2028-02",
+      "quantity": 1
+    },
+    {
+      "name": "Sterimar",
+      "expiry": "2027-05",
+      "quantity": 2
+    },
+    {
+      "name": "Sterimar",
+      "expiry": "2027-09",
+      "quantity": 1
+    },
+    {
+      "name": "Tonimer 300",
+      "expiry": "2028-03",
+      "quantity": 1
+    },
+    {
+      "name": "Dicoflor",
+      "expiry": "2028-02",
+      "quantity": 2
+    },
+    {
+      "name": "Vitamina Stermina",
+      "expiry": "2031-01",
+      "quantity": 3
+    },
+    {
+      "name": "Bimbovit D3",
+      "expiry": "2027-07",
+      "quantity": 18
+    },
+    {
+      "name": "Bimbovit D3",
+      "expiry": "2028-03",
+      "quantity": 1
+    },
+    {
+      "name": "Cicaben",
+      "expiry": null,
+      "quantity": 1
+    },
+    {
+      "name": "Invocetab Sciroppo",
+      "expiry": "2027-11",
+      "quantity": 1
+    },
+    {
+      "name": "Xflor Bisne",
+      "expiry": "2027-09",
+      "quantity": 1
+    },
+    {
+      "name": "Glucerol Supposte",
+      "expiry": "2028-12",
+      "quantity": 1
+    },
+    {
+      "name": "Eltairnes 0,5 mg",
+      "expiry": "2027-05",
+      "quantity": 1
+    },
+    {
+      "name": "Cetirizina San Dor",
+      "expiry": "2027-05",
+      "quantity": 2
+    },
+    {
+      "name": "Vespret Compresse",
+      "expiry": "2027-01",
+      "quantity": 1
+    },
+    {
+      "name": "Bebsy Adulti (Monvel)",
+      "expiry": "2028-05",
+      "quantity": 1
+    },
+    {
+      "name": "Sterimar",
+      "expiry": "2027-01",
+      "quantity": 1
+    },
+    {
+      "name": "Sterimar",
+      "expiry": "2027-08",
+      "quantity": 1
+    },
+    {
+      "name": "Sterimar",
+      "expiry": "2027-09",
+      "quantity": 1
+    },
+    {
+      "name": "Tonimer 300",
+      "expiry": "2027-10",
+      "quantity": 1
+    },
+    {
+      "name": "Tonimer 300",
+      "expiry": "2028-03",
+      "quantity": 1
+    },
+    {
+      "name": "Vea Lipo 3",
+      "expiry": "2027-11",
+      "quantity": 1
+    },
+    {
+      "name": "Vea Lipo 3",
+      "expiry": "2028-04",
+      "quantity": 1
+    },
+    {
+      "name": "Vea Lipogel",
+      "expiry": "2028-10",
+      "quantity": 2
+    },
+    {
+      "name": "Vea Lipogel",
+      "expiry": "2027-07",
+      "quantity": 1
+    },
+    {
+      "name": "Vea Lipogel",
+      "expiry": "2028-11",
+      "quantity": 1
+    },
+    {
+      "name": "Vea Lipogel",
+      "expiry": "2029-01",
+      "quantity": 2
+    }
+  ],
+  "notes": [
+    "Bif 100 Gocce: seconda scadenza poco leggibile (indicata provvisoriamente 02/2028)",
+    "Quixx Baby: 3 scadenze con totale 3 confezioni, distribuzione 1+1+1 ipotizzata",
+    "Dicoflor: la riga in fondo al primo foglio sembra 2 confezioni 02/2028 e una ulteriore scadenza non decifrabile",
+    "Cicaben: manca la scadenza",
+    "Invocetab Sciroppo: nome da verificare",
+    "Xflor Bisne: nome da verificare",
+    "Eltairnes 0,5 mg: nome da verificare",
+    "Cetirizina San Dor: nome da verificare",
+    "Vespret Compresse: nome da verificare",
+    "Bebsy Adulti (Monvel): nome da verificare",
+    "Vitamina Stermina: nome da verificare",
+    "Bimbovit D3: quantità 18 sulla prima scadenza da confermare",
+    "Sterimar: la seconda fotografia contiene altre tre scadenze oltre alle prime, possibili duplicati",
+    "Tonimer 300: compare in entrambi i fogli, potrebbe essere la stessa confezione",
+    "Vea Lipo 3: scadenze e quantità da verificare",
+    "Vea Lipogel: associazione delle quattro scadenze da verificare",
+    "Glucerol Supposte: nome da verificare"
+  ]
+}
